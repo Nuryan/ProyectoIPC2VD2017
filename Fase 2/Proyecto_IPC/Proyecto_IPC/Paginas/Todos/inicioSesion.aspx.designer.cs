@@ -7,10 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Proyecto_IPC2_v.gato.Paginas_Usuarios.Anonimos {
+namespace Proyecto_IPC.Paginas.Todos {
     
     
-    public partial class Login {
+    public partial class inicioSesion {
         
         /// <summary>
         /// Control TextBox1.
@@ -38,6 +38,15 @@ namespace Proyecto_IPC2_v.gato.Paginas_Usuarios.Anonimos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        
+        /// <summary>
+        /// Control Label1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
         /// Control Button1.

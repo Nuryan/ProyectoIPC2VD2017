@@ -1,11 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Paginas/Maestra/maestraLoginYCreacionExterna.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Proyecto_IPC2_v.gato.Paginas_Usuarios.Anonimos.Login" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Paginas/Maestra/maestraLoginYCreacionExterna.Master" AutoEventWireup="true" CodeBehind="inicioSesion.aspx.cs" Inherits="Proyecto_IPC.Paginas.Todos.inicioSesion" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-
-<asp:Content ID="Content2" runat="server" contentplaceholderid="Cuerpo">
+<asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
     <p class="titulo">
         <br />
-        ReviewSoft
+        Warlocks&#39;
     </p>
     <br />
     <div style ="width:100%">
@@ -27,6 +26,12 @@
         <center>
 
             <br />
+            <br />
+            <asp:Label ID="Label1" runat="server"></asp:Label>
+            <br />
+            <br />
+
+            <br />
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Iniciar Sesión" Width="150px"/>
             <br />
             <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Crear Usuario" Width="150px"/>
@@ -37,5 +42,3 @@
         </center>
     </div>
 </asp:Content>
-
-

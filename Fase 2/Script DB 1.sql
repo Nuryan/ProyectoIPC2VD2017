@@ -45,14 +45,22 @@ alter table conocimientoAdquirido add constraint conocimientoAdquirido_pkAuxilia
 select * from conocimientoAdquirido
 
 
+select * from usuario where apodo= 'Admin1' 
 
+select AES_DECRYPT(contraseña,'llave') from usuario where apodo = 'Admin1'
 
+update usuario set contraseña = EAS_ENCRYPT('asdf','llave') where apodo = 'Admin1'
+select * from usuario where contraseña = AES_DECRYPT('contraseña','llave')
 
+select * from usuario where apodo = 'Admin1' and contraseña = AES_ENCRYPT('asdf','llave')
 
+select apodo from usuario where apodo = 'Admin1' and contraseña = AES_ENCRYPT('asdf','llave')
 
+select * from usuario
 
+select tipoUsuario from usuario where apodo = 'Admin1'
 
-
+update usuario  set numSesion = 123 where apodo = 'Admin1'
 
 
 

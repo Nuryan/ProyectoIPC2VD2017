@@ -11,7 +11,9 @@ namespace Proyecto_IPC2_v.gato.Paginas_Maestras
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Response.Cache.SetCacheability(HttpCacheability.ServerAndNoCache);
+            Response.Cache.SetAllowResponseInBrowserHistory(false);
+            Response.Cache.SetNoStore();
         }
     }
 }

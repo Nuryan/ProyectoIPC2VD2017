@@ -29,26 +29,48 @@ public class Servicios {
         return "Hello " + txt + " !";
     }
 
+    @WebMethod(operationName = "insertNumSession")
+    public boolean insertNumSession(@WebParam(name = "apodo") String apodo, @WebParam(name = "numSession") int numSession) {
+        boolean devolver = false;
+
+        try {
+            Connection conexion = Conexion.conectar();
+
+            Statement sentencia = conexion.createStatement();
+            String query = "update usuario  set numSesion = " + numSession + " where apodo = '" + apodo + "'";
+            if (sentencia.executeUpdate(query) > 0) {
+                devolver = true;
+                return devolver;
+            }else{
+                return false;
+            }
+
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    @WebMethod(operationName = "getTipoUsuario")
+    public boolean
+    
     @WebMethod(operationName = "iniciarSesion")
     public boolean iniciarSesion(@WebParam(name = "Apodo") String apodo,
             @WebParam(name = "pass") String pass,
-             @WebParam(name = "codigo") String codigo) {
+            @WebParam(name = "codigo") String codigo) {
         try {
+            boolean devolver = false;
             Connection conexion = Conexion.conectar();
 
             Statement stmt = conexion.createStatement();
 
-            String query = "SELECT * FROM producto;";
+            String query = "select apodo from usuario where apodo = '" + apodo + "' and contraseña = AES_ENCRYPT('" + pass + "','" + codigo + "')";
             ResultSet rs = stmt.executeQuery(query);
 
             while (rs.next()) {
-                String marca = rs.getString("MARCA");
-                System.out.println(marca);
-                String descripcion = rs.getString("DESCRIPCION");
-                System.out.println(descripcion);
+                return true;
             }
 
-            return true;
+            return devolver;
         } catch (Exception e) {
             return false;
         }
