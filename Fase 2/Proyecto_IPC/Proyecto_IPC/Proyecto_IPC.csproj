@@ -70,6 +70,7 @@
   <ItemGroup>
     <Content Include="Agregados\Estilos CSS\estiloMaestraLoginYcreacion.css" />
     <Content Include="Agregados\Estilos CSS\estiloMaestraPrincipal.css" />
+    <Content Include="Agregados\Imagenes\camish2.jpg" />
     <Content Include="Agregados\Imagenes\gatos-de-la-historieta,-gato-blanco,-gato-negro,-gato-alargado-217339.jpg" />
     <Content Include="packages.config" />
     <Content Include="Agregados\Fuentes\Rye-Regular.woff" />

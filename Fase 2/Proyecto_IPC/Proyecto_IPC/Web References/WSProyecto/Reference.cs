@@ -33,6 +33,8 @@ namespace Proyecto_IPC.WSProyecto {
         
         private System.Threading.SendOrPostCallback helloOperationCompleted;
         
+        private System.Threading.SendOrPostCallback getTipoUsuarioOperationCompleted;
+        
         private System.Threading.SendOrPostCallback iniciarSesionOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
@@ -78,6 +80,9 @@ namespace Proyecto_IPC.WSProyecto {
         
         /// <remarks/>
         public event helloCompletedEventHandler helloCompleted;
+        
+        /// <remarks/>
+        public event getTipoUsuarioCompletedEventHandler getTipoUsuarioCompleted;
         
         /// <remarks/>
         public event iniciarSesionCompletedEventHandler iniciarSesionCompleted;
@@ -141,6 +146,36 @@ namespace Proyecto_IPC.WSProyecto {
             if ((this.helloCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.helloCompleted(this, new helloCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://WS/", ResponseNamespace="http://WS/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string getTipoUsuario([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string apodo) {
+            object[] results = this.Invoke("getTipoUsuario", new object[] {
+                        apodo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getTipoUsuarioAsync(string apodo) {
+            this.getTipoUsuarioAsync(apodo, null);
+        }
+        
+        /// <remarks/>
+        public void getTipoUsuarioAsync(string apodo, object userState) {
+            if ((this.getTipoUsuarioOperationCompleted == null)) {
+                this.getTipoUsuarioOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetTipoUsuarioOperationCompleted);
+            }
+            this.InvokeAsync("getTipoUsuario", new object[] {
+                        apodo}, this.getTipoUsuarioOperationCompleted, userState);
+        }
+        
+        private void OngetTipoUsuarioOperationCompleted(object arg) {
+            if ((this.getTipoUsuarioCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getTipoUsuarioCompleted(this, new getTipoUsuarioCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -236,6 +271,32 @@ namespace Proyecto_IPC.WSProyecto {
         private object[] results;
         
         internal helloCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void getTipoUsuarioCompletedEventHandler(object sender, getTipoUsuarioCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getTipoUsuarioCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getTipoUsuarioCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

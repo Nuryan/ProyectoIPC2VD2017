@@ -29,6 +29,10 @@ public class Servicios {
         return "Hello " + txt + " !";
     }
 
+    @WebMethod(operationName = "crearUsuario"){
+    
+}
+    
     @WebMethod(operationName = "insertNumSession")
     public boolean insertNumSession(@WebParam(name = "apodo") String apodo, @WebParam(name = "numSession") int numSession) {
         boolean devolver = false;
@@ -41,7 +45,7 @@ public class Servicios {
             if (sentencia.executeUpdate(query) > 0) {
                 devolver = true;
                 return devolver;
-            }else{
+            } else {
                 return false;
             }
 
@@ -51,8 +55,27 @@ public class Servicios {
     }
 
     @WebMethod(operationName = "getTipoUsuario")
-    public boolean
-    
+    public String getTipoUsuario(@WebParam(name = "apodo") String apodo) {
+        try {
+            String retornado = "0";
+
+            Connection conexion = Conexion.conectar();
+
+            Statement stmt = conexion.createStatement();
+
+            String query = "select tipoUsuario from usuario where apodo = '" + apodo + "'";
+            ResultSet rs = stmt.executeQuery(query);
+            rs.next();
+            if (rs.getString("tipoUsuario").equalsIgnoreCase("Administrador")) {
+                return "1"; 
+            }
+
+            return retornado;
+        } catch (Exception e) {
+            return e.toString();
+        }
+    }
+
     @WebMethod(operationName = "iniciarSesion")
     public boolean iniciarSesion(@WebParam(name = "Apodo") String apodo,
             @WebParam(name = "pass") String pass,

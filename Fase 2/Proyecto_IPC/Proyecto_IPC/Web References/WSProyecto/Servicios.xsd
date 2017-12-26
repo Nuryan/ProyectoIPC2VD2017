@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://WS/" targetNamespace="http://WS/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="getTipoUsuario" type="tns:getTipoUsuario" />
+  <xs:element name="getTipoUsuarioResponse" type="tns:getTipoUsuarioResponse" />
   <xs:element name="hello" type="tns:hello" />
   <xs:element name="helloResponse" type="tns:helloResponse" />
   <xs:element name="iniciarSesion" type="tns:iniciarSesion" />
@@ -26,6 +28,16 @@
   <xs:complexType name="iniciarSesionResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTipoUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apodo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTipoUsuarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertNumSession">

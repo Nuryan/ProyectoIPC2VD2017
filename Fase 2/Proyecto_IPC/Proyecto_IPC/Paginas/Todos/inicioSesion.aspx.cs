@@ -25,9 +25,12 @@ namespace Proyecto_IPC.Paginas.Todos
                 {
                     Random rnd = new Random();
                     int numSesion = rnd.Next();
+                    conector.insertNumSession(TextBox1.Text, numSesion);
                     Session["numSesion"] = numSesion;
-                    Session["tipoUsuario"] = conector.insertNumSession(TextBox1.Text, numSesion);
+                    Session["tipoUsuario"] = conector.getTipoUsuario(TextBox1.Text);
                     Session["usuario"] = TextBox1.Text;
+
+
                 }
                 else
                 {

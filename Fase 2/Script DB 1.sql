@@ -62,5 +62,27 @@ select tipoUsuario from usuario where apodo = 'Admin1'
 
 update usuario  set numSesion = 123 where apodo = 'Admin1'
 
+alter table usuario drop column numSesion
+practicas
+alter table usuario add numSesion bigint
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
