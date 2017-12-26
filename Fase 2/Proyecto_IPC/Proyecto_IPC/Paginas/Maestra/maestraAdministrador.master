@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Paginas Maestras/maestraPrincipal.Master" AutoEventWireup="true" CodeBehind="maestraAdministrador.master.cs" Inherits="Proyecto_IPC2_v.gato.Paginas_Maestras.maestraAdministrador" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="lugarBotones" runat="server">
+
+    <p align ="center">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <asp:Button ID="Button1" runat="server" Text="Administrar Usuarios" BackColor="Black" ForeColor="White" Width="100%" Height="35px" OnClick="Button1_Click" />
+        <br /><br />
+        <asp:Button ID="Button2" runat="server" Text="Adminsitrar Licencias" BackColor="Black" ForeColor="White" Width="100%" Height="35px" OnClick="Button2_Click" />
+        <br />
+        <br />
+        <asp:Button ID="Button3" runat="server" Text="Adminsitrar Metricas" BackColor="Black" ForeColor="White" Width="100%" Height="35px" OnClick="Button3_Click" />
+        <br />
+        <br />
+        <asp:Button ID="Button4" runat="server" Text="Adminsitrar Profesiones" BackColor="Black" ForeColor="White" Width="100%" Height="35px" OnClick="Button4_Click" />
+        <br />
+        <br />
+        <asp:Button ID="Button5" runat="server" Text="Adminsitrar Empresas" BackColor="Black" ForeColor="White" Width="100%" Height="35px" OnClick="Button5_Click" />
+        <br />
+        <br />
+        <asp:Button ID="Button6" runat="server" Text="Adminsitrar Plataformas" BackColor="Black" ForeColor="White" Width="100%" Height="35px" OnClick="Button6_Click" />
+        <br />
+        <br />
+        <asp:Button ID="Button7" runat="server" Text="Adminsitrar Categorias" BackColor="Black" ForeColor="White" Width="100%" Height="35px" OnClick="Button7_Click" />
+        <br />
+        <br />
+        <asp:Button ID="Button8" runat="server" Text="Adminsitrar Softwares" BackColor="Black" ForeColor="White" Width="100%" Height="35px" OnClick="Button8_Click" /><br />
+        <br />
+        <asp:Button ID="Button9" runat="server" Text="Cerrar Sesion" BackColor="Black" ForeColor="White" Width="100%" Height="35px" OnClick="Button9_Click" />
+    </p>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="lugarElementos" runat="server">
+    <asp:ContentPlaceHolder ID="elementos" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

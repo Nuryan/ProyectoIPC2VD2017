@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="maestraPrincipal.master.cs" Inherits="Proyecto_IPC2_v.gato.Paginas_Maestras.maestraPrincipal" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="../Agregados/Estilos CSS/estiloMaestraPrincipal.css" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="contenedor">
+            <div class="centradoIzquierda">
+                <asp:ContentPlaceHolder ID="lugarElementos" runat="server">
+
+                <div class=" titulo">
+                    <br />
+                    <br />
+                    <br />
+                    ReviewSoft
+                </div>
+                
+            </asp:ContentPlaceHolder>
+            </div>
+            <div class=" centradoDerecha">
+                <asp:ContentPlaceHolder ID="lugarBotones" runat="server">
+            </asp:ContentPlaceHolder>
+            </div>
+            
+        </div>
+    </form>
+</body>
+</html>

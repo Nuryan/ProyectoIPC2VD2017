@@ -1,0 +1,29 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="maestraLoginYCreacionExterna.master.cs" Inherits="Proyecto_IPC2_v.gato.Paginas_Maestras.maestraLoginYCreacionExterna" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../../Agregados/Estilos CSS/estiloMaestraLoginYcreacion.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="contenedor">
+            <div class="div1">
+                <asp:ContentPlaceHolder ID="Cuerpo" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div class="div2">Div 2</div>
+        </div>
+    </form>
+</body>
+</html>
