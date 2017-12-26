@@ -8,6 +8,7 @@ package WS;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
@@ -28,25 +29,29 @@ public class Servicios {
         return "Hello " + txt + " !";
     }
 
-    @WebMethod(operationName = "insertarUsuario")
-    public String insertarUsuario(@WebParam(name = "nombre") String nombre) {
+    @WebMethod(operationName = "iniciarSesion")
+    public boolean iniciarSesion(@WebParam(name = "Apodo") String apodo,
+            @WebParam(name = "pass") String pass,
+             @WebParam(name = "codigo") String codigo) {
         try {
-            Connection con = Conexion.conectar();
-            if (con != null) {
-                String query = "insert into pruebas(id) values(?);";
+            Connection conexion = Conexion.conectar();
 
-                PreparedStatement ejecutar = con.prepareCall(query);
+            Statement stmt = conexion.createStatement();
 
-                ejecutar.setString(1, nombre);
-                
-                int devolver = ejecutar.executeUpdate();
-                
-                return devolver+"";
-            } else {
-                return "Conexion a DB fallida!";
+            String query = "SELECT * FROM producto;";
+            ResultSet rs = stmt.executeQuery(query);
+
+            while (rs.next()) {
+                String marca = rs.getString("MARCA");
+                System.out.println(marca);
+                String descripcion = rs.getString("DESCRIPCION");
+                System.out.println(descripcion);
             }
+
+            return true;
         } catch (Exception e) {
-            return 0+"";
+            return false;
         }
+
     }
 }

@@ -20,7 +20,7 @@ public class Conexion {
         try {
             Class.forName("com.mysql.jdbc.Driver");
 
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/practicas", "Mancha", "dyehuty");
+            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/proyecto_ipc2", "Mancha", "dyehuty");
             return conexion;
         } catch (Exception ex) {
             return null;
