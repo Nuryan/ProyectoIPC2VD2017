@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Paginas/Maestra/maestraLoginYCreacionExterna.Master" AutoEventWireup="true" CodeBehind="crearUsuarioDesdeLogin.aspx.cs" Inherits="Proyecto_IPC2_v.gato.Paginas_Usuarios.Anonimos.crearUsuarioDesdeLogin" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Paginas/Maestra/maestraLoginYCreacionExterna.Master" AutoEventWireup="true" CodeBehind="crearUsuarioLogin.aspx.cs" Inherits="Proyecto_IPC.Paginas.Todos.crearUsuarioLogin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
@@ -19,7 +18,7 @@
                     Nombres:*<br />
                 </td>
                 <td>
-                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="nombres" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -28,7 +27,7 @@
             Apellidos:*<br />
                 </td>
                 <td>
-                    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="apellidos" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -37,36 +36,34 @@
                     Apodo: *<br />
                 </td>
                 <td>
-                     &nbsp;</td>
+                    <asp:TextBox ID="apodo" runat="server"></asp:TextBox>
+                </td>
             </tr>
             <tr>
                 <td class="alin">
                    
-            Contraseña:<br />
+            Contraseña:*<br />
                 </td>
                 <td>
-                    &nbsp;</td>
+                    <asp:TextBox ID="pass" runat="server" TextMode="Password"></asp:TextBox>
+                </td>
             </tr><tr>
                 <td class="alin">
                    
-            Repita la Contraseña:<br />
+            Repita la Contraseña:*<br />
                 </td>
                 <td>
-                    &nbsp;</td>
+                    <asp:TextBox ID="passRepetido" runat="server" TextMode="Password"></asp:TextBox>
+                </td>
             </tr><tr>
                 <td class="alin">
                    
-            Pregunta Secreta:<br />
+                    Codigo de Seguridad:*<br />
                 </td>
                 <td>
-                     &nbsp;</td>
-            </tr><tr>
-                <td class="alin">
-                   
-            Respuesta Secreta: <br />
+                    <asp:TextBox ID="llave" runat="server"></asp:TextBox>
+           
                 </td>
-                <td>
-                    &nbsp;</td>
             </tr>
         </table>
             <br />

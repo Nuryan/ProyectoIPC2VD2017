@@ -34,10 +34,14 @@
             <br />
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Iniciar Sesión" Width="150px"/>
             <br />
-            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Crear Usuario" Width="150px"/>
+            <br />
+            <asp:Button ID="Button2" runat="server" Text="Crear Usuario"  Width="150px"/>
+            <br />
+            <br />
+            <asp:Button ID="Button3" runat="server" Text="Recordar Contraseña"  Width="150px"/>
+            <br />
 
             <br />
-            <asp:Button ID="Button3" runat="server" OnClick="Button2_Click" Text="Recordar Contraseña" Width="150px"/>
 
         </center>
     </div>

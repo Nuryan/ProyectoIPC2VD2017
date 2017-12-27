@@ -42,6 +42,18 @@ div.contenedor {
     src: url("../Fuentes/Rye-Regular.woff");
 }
 
+div.div1 {
+    float: left;
+    width: 24%;
+    align-content:center;
+    text-align:center;
+}
+
+div.div2 {
+    float: left;
+    width: 74%;
+}
+
 .centradoIzquierda {
     text-align: center;
     float: left;

@@ -30,7 +30,7 @@ namespace Proyecto_IPC.Paginas.Todos
                     Session["tipoUsuario"] = conector.getTipoUsuario(TextBox1.Text);
                     Session["usuario"] = TextBox1.Text;
 
-
+                    Server.Transfer("portal.aspx", true);
                 }
                 else
                 {
@@ -39,5 +39,6 @@ namespace Proyecto_IPC.Paginas.Todos
             }
             
         }
+
     }
 }

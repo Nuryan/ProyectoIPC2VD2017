@@ -37,6 +37,10 @@ namespace Proyecto_IPC.WSProyecto {
         
         private System.Threading.SendOrPostCallback iniciarSesionOperationCompleted;
         
+        private System.Threading.SendOrPostCallback getNumSessionOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback crearUsuarioOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -86,6 +90,12 @@ namespace Proyecto_IPC.WSProyecto {
         
         /// <remarks/>
         public event iniciarSesionCompletedEventHandler iniciarSesionCompleted;
+        
+        /// <remarks/>
+        public event getNumSessionCompletedEventHandler getNumSessionCompleted;
+        
+        /// <remarks/>
+        public event crearUsuarioCompletedEventHandler crearUsuarioCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://WS/", ResponseNamespace="http://WS/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -152,10 +162,10 @@ namespace Proyecto_IPC.WSProyecto {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://WS/", ResponseNamespace="http://WS/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string getTipoUsuario([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string apodo) {
+        public int getTipoUsuario([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string apodo) {
             object[] results = this.Invoke("getTipoUsuario", new object[] {
                         apodo});
-            return ((string)(results[0]));
+            return ((int)(results[0]));
         }
         
         /// <remarks/>
@@ -210,6 +220,74 @@ namespace Proyecto_IPC.WSProyecto {
             if ((this.iniciarSesionCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.iniciarSesionCompleted(this, new iniciarSesionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://WS/", ResponseNamespace="http://WS/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int getNumSession([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string apodo) {
+            object[] results = this.Invoke("getNumSession", new object[] {
+                        apodo});
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getNumSessionAsync(string apodo) {
+            this.getNumSessionAsync(apodo, null);
+        }
+        
+        /// <remarks/>
+        public void getNumSessionAsync(string apodo, object userState) {
+            if ((this.getNumSessionOperationCompleted == null)) {
+                this.getNumSessionOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetNumSessionOperationCompleted);
+            }
+            this.InvokeAsync("getNumSession", new object[] {
+                        apodo}, this.getNumSessionOperationCompleted, userState);
+        }
+        
+        private void OngetNumSessionOperationCompleted(object arg) {
+            if ((this.getNumSessionCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getNumSessionCompleted(this, new getNumSessionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://WS/", ResponseNamespace="http://WS/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int crearUsuario([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string nombres, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string apellidos, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string contraseña, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string apodo, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string llave) {
+            object[] results = this.Invoke("crearUsuario", new object[] {
+                        nombres,
+                        apellidos,
+                        contraseña,
+                        apodo,
+                        llave});
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void crearUsuarioAsync(string nombres, string apellidos, string contraseña, string apodo, string llave) {
+            this.crearUsuarioAsync(nombres, apellidos, contraseña, apodo, llave, null);
+        }
+        
+        /// <remarks/>
+        public void crearUsuarioAsync(string nombres, string apellidos, string contraseña, string apodo, string llave, object userState) {
+            if ((this.crearUsuarioOperationCompleted == null)) {
+                this.crearUsuarioOperationCompleted = new System.Threading.SendOrPostCallback(this.OncrearUsuarioOperationCompleted);
+            }
+            this.InvokeAsync("crearUsuario", new object[] {
+                        nombres,
+                        apellidos,
+                        contraseña,
+                        apodo,
+                        llave}, this.crearUsuarioOperationCompleted, userState);
+        }
+        
+        private void OncrearUsuarioOperationCompleted(object arg) {
+            if ((this.crearUsuarioCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.crearUsuarioCompleted(this, new crearUsuarioCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -302,10 +380,10 @@ namespace Proyecto_IPC.WSProyecto {
         }
         
         /// <remarks/>
-        public string Result {
+        public int Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
+                return ((int)(this.results[0]));
             }
         }
     }
@@ -332,6 +410,58 @@ namespace Proyecto_IPC.WSProyecto {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void getNumSessionCompletedEventHandler(object sender, getNumSessionCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getNumSessionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getNumSessionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void crearUsuarioCompletedEventHandler(object sender, crearUsuarioCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class crearUsuarioCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal crearUsuarioCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
             }
         }
     }

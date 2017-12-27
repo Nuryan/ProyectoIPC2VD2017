@@ -74,15 +74,14 @@
     <Content Include="Agregados\Imagenes\gatos-de-la-historieta,-gato-blanco,-gato-negro,-gato-alargado-217339.jpg" />
     <Content Include="packages.config" />
     <Content Include="Agregados\Fuentes\Rye-Regular.woff" />
-    <Content Include="Paginas\Maestra\maestraAdministrador.master" />
     <Content Include="Paginas\Maestra\maestraLoginYCreacionExterna.Master" />
-    <Content Include="Paginas\Maestra\maestraNormal.master" />
-    <Content Include="Paginas\Maestra\maestraPremium.master" />
-    <Content Include="Paginas\Maestra\maestraPrincipal.Master" />
+    <Content Include="Paginas\Maestra\maestraInterfaz.Master" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="Paginas\Todos\contactos.aspx" />
+    <Content Include="Paginas\Todos\crearUsuarioLogin.aspx" />
     <Content Include="Paginas\Todos\inicioSesion.aspx" />
     <None Include="Web References\WSProyecto\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
@@ -100,16 +99,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Paginas\Todos\crearUsuarioDesdeLogin.aspx" />
+    <Content Include="Paginas\Todos\portal.aspx" />
+    <Content Include="Paginas\Todos\proyectos.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Paginas\Maestra\maestraAdministrador.master.cs">
-      <DependentUpon>maestraAdministrador.master</DependentUpon>
+    <Compile Include="Paginas\Maestra\maestraInterfaz.Master.cs">
+      <DependentUpon>maestraInterfaz.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Paginas\Maestra\maestraAdministrador.master.designer.cs">
-      <DependentUpon>maestraAdministrador.master</DependentUpon>
+    <Compile Include="Paginas\Maestra\maestraInterfaz.Master.designer.cs">
+      <DependentUpon>maestraInterfaz.Master</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Maestra\maestraLoginYCreacionExterna.Master.cs">
       <DependentUpon>maestraLoginYCreacionExterna.Master</DependentUpon>
@@ -118,33 +118,19 @@
     <Compile Include="Paginas\Maestra\maestraLoginYCreacionExterna.Master.designer.cs">
       <DependentUpon>maestraLoginYCreacionExterna.Master</DependentUpon>
     </Compile>
-    <Compile Include="Paginas\Maestra\maestraNormal.master.cs">
-      <DependentUpon>maestraNormal.master</DependentUpon>
+    <Compile Include="Paginas\Todos\contactos.aspx.cs">
+      <DependentUpon>contactos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Paginas\Maestra\maestraNormal.master.designer.cs">
-      <DependentUpon>maestraNormal.master</DependentUpon>
+    <Compile Include="Paginas\Todos\contactos.aspx.designer.cs">
+      <DependentUpon>contactos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Paginas\Maestra\maestraPremium.master.cs">
-      <DependentUpon>maestraPremium.master</DependentUpon>
+    <Compile Include="Paginas\Todos\crearUsuarioLogin.aspx.cs">
+      <DependentUpon>crearUsuarioLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Paginas\Maestra\maestraPremium.master.designer.cs">
-      <DependentUpon>maestraPremium.master</DependentUpon>
-    </Compile>
-    <Compile Include="Paginas\Maestra\maestraPrincipal.Master.cs">
-      <DependentUpon>maestraPrincipal.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Paginas\Maestra\maestraPrincipal.Master.designer.cs">
-      <DependentUpon>maestraPrincipal.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Paginas\Todos\crearUsuarioDesdeLogin.aspx.cs">
-      <DependentUpon>crearUsuarioDesdeLogin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Paginas\Todos\crearUsuarioDesdeLogin.aspx.designer.cs">
-      <DependentUpon>crearUsuarioDesdeLogin.aspx</DependentUpon>
+    <Compile Include="Paginas\Todos\crearUsuarioLogin.aspx.designer.cs">
+      <DependentUpon>crearUsuarioLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Todos\inicioSesion.aspx.cs">
       <DependentUpon>inicioSesion.aspx</DependentUpon>
@@ -152,6 +138,20 @@
     </Compile>
     <Compile Include="Paginas\Todos\inicioSesion.aspx.designer.cs">
       <DependentUpon>inicioSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Todos\portal.aspx.cs">
+      <DependentUpon>portal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Todos\portal.aspx.designer.cs">
+      <DependentUpon>portal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Todos\proyectos.aspx.cs">
+      <DependentUpon>proyectos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Todos\proyectos.aspx.designer.cs">
+      <DependentUpon>proyectos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
