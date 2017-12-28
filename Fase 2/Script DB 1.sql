@@ -161,6 +161,38 @@ select usuario.apodo from contactos inner join usuario on contactos.usuarioUno =
 insert into contactos(usuarioUno, usuarioDos) values(1,2),(1,5),(1,7)
 
 
+select usuario.apodo from contactos inner join usuario on contactos.usuarioDos = usuario.idUsuario where contactos.usuarioUno = 1
+
+select usuario.apodo from usuario inner join contactos on usuario.idUsuario = contactos.usuarioDos where usuario.apodo = 'Admin'
+
+select idUsuario from usuario where apodo = 'Admin1'
+
+
+select * from conocimientoadquirido
+
+insert into conocimientoadquirido(idConocimiento, idUsuario) values (2,1)
+
+update conocimientoadquirido set karma = 3 where idConocimiento = 1 and idUsuario = 1
+
+select avg(karma) as 'karma' from conocimientoadquirido where idUsuario = 1
+
+select nombre from conocimiento
+
+select idConocimiento from conocimiento where nombre = 'con1'
+
+select nombre from conocimientoadquirido inner join conocimiento on conocimientoadquirido.idConocimiento = Conocimiento.idConocimiento where idUsuario = 1 
+
+select * from conocimiento
+
+select * from conocimientoadquirido
+
+select * from usuario
+
+insert into conocimientoadquirido(idConocimiento, idUsuario, dominio, formaAprendido, comentario) values(2,2, 2, null, null)
+
+
+
+
 
 
 

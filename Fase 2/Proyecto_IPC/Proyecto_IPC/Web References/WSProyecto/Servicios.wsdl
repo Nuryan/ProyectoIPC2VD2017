@@ -5,11 +5,23 @@
       <xsd:import schemaLocation="http://desktop-5mgvva6:8080/WSProyectoIPC2/Servicios?xsd=1" namespace="http://WS/" />
     </xsd:schema>
   </types>
-  <message name="insertNumSession">
-    <part name="parameters" element="tns:insertNumSession" />
+  <message name="crearUsuario">
+    <part name="parameters" element="tns:crearUsuario" />
   </message>
-  <message name="insertNumSessionResponse">
-    <part name="parameters" element="tns:insertNumSessionResponse" />
+  <message name="crearUsuarioResponse">
+    <part name="parameters" element="tns:crearUsuarioResponse" />
+  </message>
+  <message name="getConocimientos">
+    <part name="parameters" element="tns:getConocimientos" />
+  </message>
+  <message name="getConocimientosResponse">
+    <part name="parameters" element="tns:getConocimientosResponse" />
+  </message>
+  <message name="getKarmaTotal">
+    <part name="parameters" element="tns:getKarmaTotal" />
+  </message>
+  <message name="getKarmaTotalResponse">
+    <part name="parameters" element="tns:getKarmaTotalResponse" />
   </message>
   <message name="hello">
     <part name="parameters" element="tns:hello" />
@@ -29,22 +41,42 @@
   <message name="iniciarSesionResponse">
     <part name="parameters" element="tns:iniciarSesionResponse" />
   </message>
+  <message name="insertNumSession">
+    <part name="parameters" element="tns:insertNumSession" />
+  </message>
+  <message name="insertNumSessionResponse">
+    <part name="parameters" element="tns:insertNumSessionResponse" />
+  </message>
+  <message name="getContactos">
+    <part name="parameters" element="tns:getContactos" />
+  </message>
+  <message name="getContactosResponse">
+    <part name="parameters" element="tns:getContactosResponse" />
+  </message>
   <message name="getNumSession">
     <part name="parameters" element="tns:getNumSession" />
   </message>
   <message name="getNumSessionResponse">
     <part name="parameters" element="tns:getNumSessionResponse" />
   </message>
-  <message name="crearUsuario">
-    <part name="parameters" element="tns:crearUsuario" />
+  <message name="getConocimientosDeUsuario">
+    <part name="parameters" element="tns:getConocimientosDeUsuario" />
   </message>
-  <message name="crearUsuarioResponse">
-    <part name="parameters" element="tns:crearUsuarioResponse" />
+  <message name="getConocimientosDeUsuarioResponse">
+    <part name="parameters" element="tns:getConocimientosDeUsuarioResponse" />
   </message>
   <portType name="Servicios">
-    <operation name="insertNumSession">
-      <input wsam:Action="http://WS/Servicios/insertNumSessionRequest" message="tns:insertNumSession" />
-      <output wsam:Action="http://WS/Servicios/insertNumSessionResponse" message="tns:insertNumSessionResponse" />
+    <operation name="crearUsuario">
+      <input wsam:Action="http://WS/Servicios/crearUsuarioRequest" message="tns:crearUsuario" />
+      <output wsam:Action="http://WS/Servicios/crearUsuarioResponse" message="tns:crearUsuarioResponse" />
+    </operation>
+    <operation name="getConocimientos">
+      <input wsam:Action="http://WS/Servicios/getConocimientosRequest" message="tns:getConocimientos" />
+      <output wsam:Action="http://WS/Servicios/getConocimientosResponse" message="tns:getConocimientosResponse" />
+    </operation>
+    <operation name="getKarmaTotal">
+      <input wsam:Action="http://WS/Servicios/getKarmaTotalRequest" message="tns:getKarmaTotal" />
+      <output wsam:Action="http://WS/Servicios/getKarmaTotalResponse" message="tns:getKarmaTotalResponse" />
     </operation>
     <operation name="hello">
       <input wsam:Action="http://WS/Servicios/helloRequest" message="tns:hello" />
@@ -58,18 +90,44 @@
       <input wsam:Action="http://WS/Servicios/iniciarSesionRequest" message="tns:iniciarSesion" />
       <output wsam:Action="http://WS/Servicios/iniciarSesionResponse" message="tns:iniciarSesionResponse" />
     </operation>
+    <operation name="insertNumSession">
+      <input wsam:Action="http://WS/Servicios/insertNumSessionRequest" message="tns:insertNumSession" />
+      <output wsam:Action="http://WS/Servicios/insertNumSessionResponse" message="tns:insertNumSessionResponse" />
+    </operation>
+    <operation name="getContactos">
+      <input wsam:Action="http://WS/Servicios/getContactosRequest" message="tns:getContactos" />
+      <output wsam:Action="http://WS/Servicios/getContactosResponse" message="tns:getContactosResponse" />
+    </operation>
     <operation name="getNumSession">
       <input wsam:Action="http://WS/Servicios/getNumSessionRequest" message="tns:getNumSession" />
       <output wsam:Action="http://WS/Servicios/getNumSessionResponse" message="tns:getNumSessionResponse" />
     </operation>
-    <operation name="crearUsuario">
-      <input wsam:Action="http://WS/Servicios/crearUsuarioRequest" message="tns:crearUsuario" />
-      <output wsam:Action="http://WS/Servicios/crearUsuarioResponse" message="tns:crearUsuarioResponse" />
+    <operation name="getConocimientosDeUsuario">
+      <input wsam:Action="http://WS/Servicios/getConocimientosDeUsuarioRequest" message="tns:getConocimientosDeUsuario" />
+      <output wsam:Action="http://WS/Servicios/getConocimientosDeUsuarioResponse" message="tns:getConocimientosDeUsuarioResponse" />
     </operation>
   </portType>
   <binding name="ServiciosPortBinding" type="tns:Servicios">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="insertNumSession">
+    <operation name="crearUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getConocimientos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getKarmaTotal">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -105,6 +163,24 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="insertNumSession">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getContactos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="getNumSession">
       <soap:operation soapAction="" />
       <input>
@@ -114,7 +190,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="crearUsuario">
+    <operation name="getConocimientosDeUsuario">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

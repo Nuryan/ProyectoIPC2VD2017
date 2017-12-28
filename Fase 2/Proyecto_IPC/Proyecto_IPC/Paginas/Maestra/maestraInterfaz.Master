@@ -25,7 +25,7 @@
                 <asp:Button ID="Button2" runat="server" Text="Tareas" BackColor="Black" ForeColor="White" Width="80%" Height="35px" />
                 <br />
                 <br />
-                <asp:Button ID="Button3" runat="server" Text="Conocimientos" BackColor="Black" ForeColor="White" Width="80%" Height="35px" />
+                <asp:Button ID="Button3" runat="server" Text="Conocimientos" BackColor="Black" ForeColor="White" Width="80%" Height="35px" OnClick="Button3_Click" />
                 <br />
                 <br />
                 <asp:Button ID="Button12" runat="server" Text="Freelancers" BackColor="Black" ForeColor="White" Width="80%" Height="35px" />

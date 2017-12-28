@@ -2,6 +2,14 @@
 <xs:schema xmlns:tns="http://WS/" targetNamespace="http://WS/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="crearUsuario" type="tns:crearUsuario" />
   <xs:element name="crearUsuarioResponse" type="tns:crearUsuarioResponse" />
+  <xs:element name="getConocimientos" type="tns:getConocimientos" />
+  <xs:element name="getConocimientosDeUsuario" type="tns:getConocimientosDeUsuario" />
+  <xs:element name="getConocimientosDeUsuarioResponse" type="tns:getConocimientosDeUsuarioResponse" />
+  <xs:element name="getConocimientosResponse" type="tns:getConocimientosResponse" />
+  <xs:element name="getContactos" type="tns:getContactos" />
+  <xs:element name="getContactosResponse" type="tns:getContactosResponse" />
+  <xs:element name="getKarmaTotal" type="tns:getKarmaTotal" />
+  <xs:element name="getKarmaTotalResponse" type="tns:getKarmaTotalResponse" />
   <xs:element name="getNumSession" type="tns:getNumSession" />
   <xs:element name="getNumSessionResponse" type="tns:getNumSessionResponse" />
   <xs:element name="getTipoUsuario" type="tns:getTipoUsuario" />
@@ -22,16 +30,6 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="hello">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="name" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="helloResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="crearUsuario">
     <xs:sequence>
       <xs:element minOccurs="0" name="nombres" type="xs:string" />
@@ -44,6 +42,26 @@
   <xs:complexType name="crearUsuarioResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="hello">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="helloResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getConocimientosDeUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apodo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getConocimientosDeUsuarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="iniciarSesion">
@@ -68,6 +86,24 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="getConocimientos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getConocimientosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getKarmaTotal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apodo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getKarmaTotalResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="insertNumSession">
     <xs:sequence>
       <xs:element minOccurs="0" name="apodo" type="xs:string" />
@@ -77,6 +113,16 @@
   <xs:complexType name="insertNumSessionResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getContactos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apodo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getContactosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

@@ -39,5 +39,10 @@ namespace Proyecto_IPC.Paginas.Maestra
         {
             Server.Transfer("~/Paginas/Todos/contactos.aspx", true);
         }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("~/Paginas/Todos/Conocimientos.aspx", true);
+        }
     }
 }

@@ -80,6 +80,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="Paginas\Todos\Conocimientos.aspx" />
     <Content Include="Paginas\Todos\contactos.aspx" />
     <Content Include="Paginas\Todos\crearUsuarioLogin.aspx" />
     <Content Include="Paginas\Todos\inicioSesion.aspx" />
@@ -117,6 +118,13 @@
     </Compile>
     <Compile Include="Paginas\Maestra\maestraLoginYCreacionExterna.Master.designer.cs">
       <DependentUpon>maestraLoginYCreacionExterna.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Todos\Conocimientos.aspx.cs">
+      <DependentUpon>Conocimientos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Todos\Conocimientos.aspx.designer.cs">
+      <DependentUpon>Conocimientos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Todos\contactos.aspx.cs">
       <DependentUpon>contactos.aspx</DependentUpon>
