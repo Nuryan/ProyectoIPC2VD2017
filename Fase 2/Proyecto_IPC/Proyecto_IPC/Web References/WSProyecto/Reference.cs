@@ -31,23 +31,25 @@ namespace Proyecto_IPC.WSProyecto {
         
         private System.Threading.SendOrPostCallback crearUsuarioOperationCompleted;
         
-        private System.Threading.SendOrPostCallback getConocimientosOperationCompleted;
+        private System.Threading.SendOrPostCallback agregarConocimientoOperationCompleted;
         
-        private System.Threading.SendOrPostCallback getKarmaTotalOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback helloOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback getTipoUsuarioOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback iniciarSesionOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback insertNumSessionOperationCompleted;
+        private System.Threading.SendOrPostCallback getConocimientosDeUsuarioOperationCompleted;
         
         private System.Threading.SendOrPostCallback getContactosOperationCompleted;
         
+        private System.Threading.SendOrPostCallback iniciarSesionOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getKarmaTotalOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback insertNumSessionOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback helloOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getConocimientosOperationCompleted;
+        
         private System.Threading.SendOrPostCallback getNumSessionOperationCompleted;
         
-        private System.Threading.SendOrPostCallback getConocimientosDeUsuarioOperationCompleted;
+        private System.Threading.SendOrPostCallback getTipoUsuarioOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -91,31 +93,34 @@ namespace Proyecto_IPC.WSProyecto {
         public event crearUsuarioCompletedEventHandler crearUsuarioCompleted;
         
         /// <remarks/>
-        public event getConocimientosCompletedEventHandler getConocimientosCompleted;
+        public event agregarConocimientoCompletedEventHandler agregarConocimientoCompleted;
         
         /// <remarks/>
-        public event getKarmaTotalCompletedEventHandler getKarmaTotalCompleted;
-        
-        /// <remarks/>
-        public event helloCompletedEventHandler helloCompleted;
-        
-        /// <remarks/>
-        public event getTipoUsuarioCompletedEventHandler getTipoUsuarioCompleted;
-        
-        /// <remarks/>
-        public event iniciarSesionCompletedEventHandler iniciarSesionCompleted;
-        
-        /// <remarks/>
-        public event insertNumSessionCompletedEventHandler insertNumSessionCompleted;
+        public event getConocimientosDeUsuarioCompletedEventHandler getConocimientosDeUsuarioCompleted;
         
         /// <remarks/>
         public event getContactosCompletedEventHandler getContactosCompleted;
         
         /// <remarks/>
+        public event iniciarSesionCompletedEventHandler iniciarSesionCompleted;
+        
+        /// <remarks/>
+        public event getKarmaTotalCompletedEventHandler getKarmaTotalCompleted;
+        
+        /// <remarks/>
+        public event insertNumSessionCompletedEventHandler insertNumSessionCompleted;
+        
+        /// <remarks/>
+        public event helloCompletedEventHandler helloCompleted;
+        
+        /// <remarks/>
+        public event getConocimientosCompletedEventHandler getConocimientosCompleted;
+        
+        /// <remarks/>
         public event getNumSessionCompletedEventHandler getNumSessionCompleted;
         
         /// <remarks/>
-        public event getConocimientosDeUsuarioCompletedEventHandler getConocimientosDeUsuarioCompleted;
+        public event getTipoUsuarioCompletedEventHandler getTipoUsuarioCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://WS/", ResponseNamespace="http://WS/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -157,119 +162,99 @@ namespace Proyecto_IPC.WSProyecto {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://WS/", ResponseNamespace="http://WS/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
-        public string[] getConocimientos() {
-            object[] results = this.Invoke("getConocimientos", new object[0]);
-            return ((string[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getConocimientosAsync() {
-            this.getConocimientosAsync(null);
-        }
-        
-        /// <remarks/>
-        public void getConocimientosAsync(object userState) {
-            if ((this.getConocimientosOperationCompleted == null)) {
-                this.getConocimientosOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetConocimientosOperationCompleted);
-            }
-            this.InvokeAsync("getConocimientos", new object[0], this.getConocimientosOperationCompleted, userState);
-        }
-        
-        private void OngetConocimientosOperationCompleted(object arg) {
-            if ((this.getConocimientosCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getConocimientosCompleted(this, new getConocimientosCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://WS/", ResponseNamespace="http://WS/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double getKarmaTotal([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string apodo) {
-            object[] results = this.Invoke("getKarmaTotal", new object[] {
-                        apodo});
-            return ((double)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getKarmaTotalAsync(string apodo) {
-            this.getKarmaTotalAsync(apodo, null);
-        }
-        
-        /// <remarks/>
-        public void getKarmaTotalAsync(string apodo, object userState) {
-            if ((this.getKarmaTotalOperationCompleted == null)) {
-                this.getKarmaTotalOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetKarmaTotalOperationCompleted);
-            }
-            this.InvokeAsync("getKarmaTotal", new object[] {
-                        apodo}, this.getKarmaTotalOperationCompleted, userState);
-        }
-        
-        private void OngetKarmaTotalOperationCompleted(object arg) {
-            if ((this.getKarmaTotalCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getKarmaTotalCompleted(this, new getKarmaTotalCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://WS/", ResponseNamespace="http://WS/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string hello([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string name) {
-            object[] results = this.Invoke("hello", new object[] {
-                        name});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void helloAsync(string name) {
-            this.helloAsync(name, null);
-        }
-        
-        /// <remarks/>
-        public void helloAsync(string name, object userState) {
-            if ((this.helloOperationCompleted == null)) {
-                this.helloOperationCompleted = new System.Threading.SendOrPostCallback(this.OnhelloOperationCompleted);
-            }
-            this.InvokeAsync("hello", new object[] {
-                        name}, this.helloOperationCompleted, userState);
-        }
-        
-        private void OnhelloOperationCompleted(object arg) {
-            if ((this.helloCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.helloCompleted(this, new helloCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://WS/", ResponseNamespace="http://WS/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int getTipoUsuario([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string apodo) {
-            object[] results = this.Invoke("getTipoUsuario", new object[] {
-                        apodo});
+        public int agregarConocimiento([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string nombreConocimiento, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string apodo, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] int dominio, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string formaAprendido, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string comentario) {
+            object[] results = this.Invoke("agregarConocimiento", new object[] {
+                        nombreConocimiento,
+                        apodo,
+                        dominio,
+                        formaAprendido,
+                        comentario});
             return ((int)(results[0]));
         }
         
         /// <remarks/>
-        public void getTipoUsuarioAsync(string apodo) {
-            this.getTipoUsuarioAsync(apodo, null);
+        public void agregarConocimientoAsync(string nombreConocimiento, string apodo, int dominio, string formaAprendido, string comentario) {
+            this.agregarConocimientoAsync(nombreConocimiento, apodo, dominio, formaAprendido, comentario, null);
         }
         
         /// <remarks/>
-        public void getTipoUsuarioAsync(string apodo, object userState) {
-            if ((this.getTipoUsuarioOperationCompleted == null)) {
-                this.getTipoUsuarioOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetTipoUsuarioOperationCompleted);
+        public void agregarConocimientoAsync(string nombreConocimiento, string apodo, int dominio, string formaAprendido, string comentario, object userState) {
+            if ((this.agregarConocimientoOperationCompleted == null)) {
+                this.agregarConocimientoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnagregarConocimientoOperationCompleted);
             }
-            this.InvokeAsync("getTipoUsuario", new object[] {
-                        apodo}, this.getTipoUsuarioOperationCompleted, userState);
+            this.InvokeAsync("agregarConocimiento", new object[] {
+                        nombreConocimiento,
+                        apodo,
+                        dominio,
+                        formaAprendido,
+                        comentario}, this.agregarConocimientoOperationCompleted, userState);
         }
         
-        private void OngetTipoUsuarioOperationCompleted(object arg) {
-            if ((this.getTipoUsuarioCompleted != null)) {
+        private void OnagregarConocimientoOperationCompleted(object arg) {
+            if ((this.agregarConocimientoCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getTipoUsuarioCompleted(this, new getTipoUsuarioCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.agregarConocimientoCompleted(this, new agregarConocimientoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://WS/", ResponseNamespace="http://WS/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
+        public string[] getConocimientosDeUsuario([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string apodo) {
+            object[] results = this.Invoke("getConocimientosDeUsuario", new object[] {
+                        apodo});
+            return ((string[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getConocimientosDeUsuarioAsync(string apodo) {
+            this.getConocimientosDeUsuarioAsync(apodo, null);
+        }
+        
+        /// <remarks/>
+        public void getConocimientosDeUsuarioAsync(string apodo, object userState) {
+            if ((this.getConocimientosDeUsuarioOperationCompleted == null)) {
+                this.getConocimientosDeUsuarioOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetConocimientosDeUsuarioOperationCompleted);
+            }
+            this.InvokeAsync("getConocimientosDeUsuario", new object[] {
+                        apodo}, this.getConocimientosDeUsuarioOperationCompleted, userState);
+        }
+        
+        private void OngetConocimientosDeUsuarioOperationCompleted(object arg) {
+            if ((this.getConocimientosDeUsuarioCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getConocimientosDeUsuarioCompleted(this, new getConocimientosDeUsuarioCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://WS/", ResponseNamespace="http://WS/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
+        public string[] getContactos([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string apodo) {
+            object[] results = this.Invoke("getContactos", new object[] {
+                        apodo});
+            return ((string[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getContactosAsync(string apodo) {
+            this.getContactosAsync(apodo, null);
+        }
+        
+        /// <remarks/>
+        public void getContactosAsync(string apodo, object userState) {
+            if ((this.getContactosOperationCompleted == null)) {
+                this.getContactosOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetContactosOperationCompleted);
+            }
+            this.InvokeAsync("getContactos", new object[] {
+                        apodo}, this.getContactosOperationCompleted, userState);
+        }
+        
+        private void OngetContactosOperationCompleted(object arg) {
+            if ((this.getContactosCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getContactosCompleted(this, new getContactosCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -310,6 +295,36 @@ namespace Proyecto_IPC.WSProyecto {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://WS/", ResponseNamespace="http://WS/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public double getKarmaTotal([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string apodo) {
+            object[] results = this.Invoke("getKarmaTotal", new object[] {
+                        apodo});
+            return ((double)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getKarmaTotalAsync(string apodo) {
+            this.getKarmaTotalAsync(apodo, null);
+        }
+        
+        /// <remarks/>
+        public void getKarmaTotalAsync(string apodo, object userState) {
+            if ((this.getKarmaTotalOperationCompleted == null)) {
+                this.getKarmaTotalOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetKarmaTotalOperationCompleted);
+            }
+            this.InvokeAsync("getKarmaTotal", new object[] {
+                        apodo}, this.getKarmaTotalOperationCompleted, userState);
+        }
+        
+        private void OngetKarmaTotalOperationCompleted(object arg) {
+            if ((this.getKarmaTotalCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getKarmaTotalCompleted(this, new getKarmaTotalCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://WS/", ResponseNamespace="http://WS/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public bool insertNumSession([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string apodo, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] int numSession) {
             object[] results = this.Invoke("insertNumSession", new object[] {
                         apodo,
@@ -341,31 +356,59 @@ namespace Proyecto_IPC.WSProyecto {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://WS/", ResponseNamespace="http://WS/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string hello([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string name) {
+            object[] results = this.Invoke("hello", new object[] {
+                        name});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void helloAsync(string name) {
+            this.helloAsync(name, null);
+        }
+        
+        /// <remarks/>
+        public void helloAsync(string name, object userState) {
+            if ((this.helloOperationCompleted == null)) {
+                this.helloOperationCompleted = new System.Threading.SendOrPostCallback(this.OnhelloOperationCompleted);
+            }
+            this.InvokeAsync("hello", new object[] {
+                        name}, this.helloOperationCompleted, userState);
+        }
+        
+        private void OnhelloOperationCompleted(object arg) {
+            if ((this.helloCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.helloCompleted(this, new helloCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://WS/", ResponseNamespace="http://WS/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
-        public string[] getContactos([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string apodo) {
-            object[] results = this.Invoke("getContactos", new object[] {
-                        apodo});
+        public string[] getConocimientos() {
+            object[] results = this.Invoke("getConocimientos", new object[0]);
             return ((string[])(results[0]));
         }
         
         /// <remarks/>
-        public void getContactosAsync(string apodo) {
-            this.getContactosAsync(apodo, null);
+        public void getConocimientosAsync() {
+            this.getConocimientosAsync(null);
         }
         
         /// <remarks/>
-        public void getContactosAsync(string apodo, object userState) {
-            if ((this.getContactosOperationCompleted == null)) {
-                this.getContactosOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetContactosOperationCompleted);
+        public void getConocimientosAsync(object userState) {
+            if ((this.getConocimientosOperationCompleted == null)) {
+                this.getConocimientosOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetConocimientosOperationCompleted);
             }
-            this.InvokeAsync("getContactos", new object[] {
-                        apodo}, this.getContactosOperationCompleted, userState);
+            this.InvokeAsync("getConocimientos", new object[0], this.getConocimientosOperationCompleted, userState);
         }
         
-        private void OngetContactosOperationCompleted(object arg) {
-            if ((this.getContactosCompleted != null)) {
+        private void OngetConocimientosOperationCompleted(object arg) {
+            if ((this.getConocimientosCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getContactosCompleted(this, new getContactosCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.getConocimientosCompleted(this, new getConocimientosCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -401,31 +444,31 @@ namespace Proyecto_IPC.WSProyecto {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://WS/", ResponseNamespace="http://WS/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
-        public string[] getConocimientosDeUsuario([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string apodo) {
-            object[] results = this.Invoke("getConocimientosDeUsuario", new object[] {
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int getTipoUsuario([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string apodo) {
+            object[] results = this.Invoke("getTipoUsuario", new object[] {
                         apodo});
-            return ((string[])(results[0]));
+            return ((int)(results[0]));
         }
         
         /// <remarks/>
-        public void getConocimientosDeUsuarioAsync(string apodo) {
-            this.getConocimientosDeUsuarioAsync(apodo, null);
+        public void getTipoUsuarioAsync(string apodo) {
+            this.getTipoUsuarioAsync(apodo, null);
         }
         
         /// <remarks/>
-        public void getConocimientosDeUsuarioAsync(string apodo, object userState) {
-            if ((this.getConocimientosDeUsuarioOperationCompleted == null)) {
-                this.getConocimientosDeUsuarioOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetConocimientosDeUsuarioOperationCompleted);
+        public void getTipoUsuarioAsync(string apodo, object userState) {
+            if ((this.getTipoUsuarioOperationCompleted == null)) {
+                this.getTipoUsuarioOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetTipoUsuarioOperationCompleted);
             }
-            this.InvokeAsync("getConocimientosDeUsuario", new object[] {
-                        apodo}, this.getConocimientosDeUsuarioOperationCompleted, userState);
+            this.InvokeAsync("getTipoUsuario", new object[] {
+                        apodo}, this.getTipoUsuarioOperationCompleted, userState);
         }
         
-        private void OngetConocimientosDeUsuarioOperationCompleted(object arg) {
-            if ((this.getConocimientosDeUsuarioCompleted != null)) {
+        private void OngetTipoUsuarioOperationCompleted(object arg) {
+            if ((this.getTipoUsuarioCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getConocimientosDeUsuarioCompleted(this, new getConocimientosDeUsuarioCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.getTipoUsuarioCompleted(this, new getTipoUsuarioCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -476,17 +519,43 @@ namespace Proyecto_IPC.WSProyecto {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
-    public delegate void getConocimientosCompletedEventHandler(object sender, getConocimientosCompletedEventArgs e);
+    public delegate void agregarConocimientoCompletedEventHandler(object sender, agregarConocimientoCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getConocimientosCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class agregarConocimientoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal getConocimientosCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal agregarConocimientoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void getConocimientosDeUsuarioCompletedEventHandler(object sender, getConocimientosDeUsuarioCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getConocimientosDeUsuarioCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getConocimientosDeUsuarioCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -502,78 +571,26 @@ namespace Proyecto_IPC.WSProyecto {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
-    public delegate void getKarmaTotalCompletedEventHandler(object sender, getKarmaTotalCompletedEventArgs e);
+    public delegate void getContactosCompletedEventHandler(object sender, getContactosCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getKarmaTotalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class getContactosCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal getKarmaTotalCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal getContactosCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
         /// <remarks/>
-        public double Result {
+        public string[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((double)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
-    public delegate void helloCompletedEventHandler(object sender, helloCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class helloCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal helloCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
-    public delegate void getTipoUsuarioCompletedEventHandler(object sender, getTipoUsuarioCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getTipoUsuarioCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getTipoUsuarioCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
+                return ((string[])(this.results[0]));
             }
         }
     }
@@ -606,6 +623,32 @@ namespace Proyecto_IPC.WSProyecto {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void getKarmaTotalCompletedEventHandler(object sender, getKarmaTotalCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getKarmaTotalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getKarmaTotalCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public double Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((double)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void insertNumSessionCompletedEventHandler(object sender, insertNumSessionCompletedEventArgs e);
     
     /// <remarks/>
@@ -632,17 +675,43 @@ namespace Proyecto_IPC.WSProyecto {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
-    public delegate void getContactosCompletedEventHandler(object sender, getContactosCompletedEventArgs e);
+    public delegate void helloCompletedEventHandler(object sender, helloCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getContactosCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class helloCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal getContactosCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal helloCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void getConocimientosCompletedEventHandler(object sender, getConocimientosCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getConocimientosCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getConocimientosCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -684,26 +753,26 @@ namespace Proyecto_IPC.WSProyecto {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
-    public delegate void getConocimientosDeUsuarioCompletedEventHandler(object sender, getConocimientosDeUsuarioCompletedEventArgs e);
+    public delegate void getTipoUsuarioCompletedEventHandler(object sender, getTipoUsuarioCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getConocimientosDeUsuarioCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class getTipoUsuarioCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal getConocimientosDeUsuarioCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal getTipoUsuarioCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
         /// <remarks/>
-        public string[] Result {
+        public int Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((string[])(this.results[0]));
+                return ((int)(this.results[0]));
             }
         }
     }

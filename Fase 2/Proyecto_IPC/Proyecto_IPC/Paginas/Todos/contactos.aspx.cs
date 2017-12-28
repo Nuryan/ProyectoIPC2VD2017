@@ -19,6 +19,10 @@ namespace Proyecto_IPC.Paginas.Todos
         {
             //comienza creacion de tabla
             String[] contactos = conector.getContactos((String)Session["usuario"]);
+            if (contactos == null)
+            {
+                return;
+            }
             int totalFilas = contactos.Length;
             int filaActual;
             int columnaActual;
@@ -54,6 +58,11 @@ namespace Proyecto_IPC.Paginas.Todos
         }
 
         protected void Button14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button13_Click(object sender, EventArgs e)
         {
 
         }

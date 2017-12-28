@@ -9,7 +9,7 @@
         <br />
         Apodo: 
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-&nbsp;<asp:Button ID="Button13" runat="server" Text="Agregar" />
+&nbsp;<asp:Button ID="Button13" runat="server" Text="Agregar" OnClick="Button13_Click" />
         <br />
         <br />
         Eliminar Contacto<br />

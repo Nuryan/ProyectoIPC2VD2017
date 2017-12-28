@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://WS/" targetNamespace="http://WS/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="agregarConocimiento" type="tns:agregarConocimiento" />
+  <xs:element name="agregarConocimientoResponse" type="tns:agregarConocimientoResponse" />
   <xs:element name="crearUsuario" type="tns:crearUsuario" />
   <xs:element name="crearUsuarioResponse" type="tns:crearUsuarioResponse" />
   <xs:element name="getConocimientos" type="tns:getConocimientos" />
@@ -44,14 +46,18 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="hello">
+  <xs:complexType name="agregarConocimiento">
     <xs:sequence>
-      <xs:element minOccurs="0" name="name" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreConocimiento" type="xs:string" />
+      <xs:element minOccurs="0" name="apodo" type="xs:string" />
+      <xs:element name="dominio" type="xs:int" />
+      <xs:element minOccurs="0" name="formaAprendido" type="xs:string" />
+      <xs:element minOccurs="0" name="comentario" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="helloResponse">
+  <xs:complexType name="agregarConocimientoResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="xs:string" />
+      <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="getConocimientosDeUsuario">
@@ -62,6 +68,16 @@
   <xs:complexType name="getConocimientosDeUsuarioResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="hello">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="helloResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="iniciarSesion">
@@ -86,10 +102,12 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="getConocimientos">
-    <xs:sequence />
+  <xs:complexType name="getContactos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apodo" type="xs:string" />
+    </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="getConocimientosResponse">
+  <xs:complexType name="getContactosResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:string" />
     </xs:sequence>
@@ -115,12 +133,10 @@
       <xs:element name="return" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="getContactos">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="apodo" type="xs:string" />
-    </xs:sequence>
+  <xs:complexType name="getConocimientos">
+    <xs:sequence />
   </xs:complexType>
-  <xs:complexType name="getContactosResponse">
+  <xs:complexType name="getConocimientosResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:string" />
     </xs:sequence>

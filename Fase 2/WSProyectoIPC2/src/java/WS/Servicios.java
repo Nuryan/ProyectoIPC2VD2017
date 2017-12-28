@@ -214,8 +214,8 @@ public class Servicios {
 
             Statement sentencia = conexion.createStatement();
 
-            String query = "insert into conocimientoadquirido(idConocimiento, idUsuario, dominio, formaAprendido, comentario) "+
-                    "values("+getIDConocimiento(nombreConocimiento)+","+getIDUsuario(apodo)+","+dominio+", "+formaAprendido+","+comentario+")";
+            String query = "insert into conocimientoadquirido(idConocimiento, idUsuario, dominio, formaAprendido, comentario) "
+                    + "values(" + getIDConocimiento(nombreConocimiento) + "," + getIDUsuario(apodo) + "," + dominio + ",' " + formaAprendido + "','" + comentario + "')";
 
             if (sentencia.executeUpdate(query) > 0) {
                 devolver++;
@@ -281,6 +281,27 @@ public class Servicios {
             }
 
             return retornado;
+        } catch (Exception e) {
+            return -1;
+        }
+    }
+
+    @WebMethod(operationName = "añadirContacto")
+    public int añadirContacto(
+            @WebParam(name = "usuario") String usuario,
+            @WebParam(name = "contacto") String contacto) {
+        try {
+            int devolver = 0;
+            Connection conexion = Conexion.conectar();
+
+            Statement sentencia = conexion.createStatement();
+
+            String query = "insert into contactos (usuarioUno, usuarioDos) values ("+getIDUsuario(usuario)+","+getIDUsuario(contacto)+")";
+
+            if (sentencia.executeUpdate(query) > 0) {
+                devolver++;
+            }
+            return devolver;
         } catch (Exception e) {
             return -1;
         }

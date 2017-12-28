@@ -18,7 +18,7 @@ namespace Proyecto_IPC.Paginas.Maestra
             }
             else if ((int)Session["numSesion"] != conector.getNumSession((string)Session["usuario"]))
             {
-                Server.Transfer("~/Paginas Usuarios/Anonimos/Login.aspx", false);
+                Server.Transfer("~/Paginas/Todos/inicioSesion.aspx", false);
             }
 
             if ((int)Session["tipoUsuario"]!=1)
