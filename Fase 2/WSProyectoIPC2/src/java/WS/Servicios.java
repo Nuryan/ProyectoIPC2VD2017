@@ -287,8 +287,7 @@ public class Servicios {
     }
 
     @WebMethod(operationName = "añadirContacto")
-    public int añadirContacto(
-            @WebParam(name = "usuario") String usuario,
+    public int añadirContacto(@WebParam(name = "usuario") String usuario,
             @WebParam(name = "contacto") String contacto) {
         try {
             int devolver = 0;

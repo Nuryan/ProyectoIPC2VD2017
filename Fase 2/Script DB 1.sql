@@ -188,14 +188,25 @@ select * from conocimientoadquirido
 
 select * from usuario
 
-insert into conocimientoadquirido(idConocimiento, idUsuario, dominio, formaAprendido, comentario) values(2,2, 2, null, null)
+insert into conocimientoadquirido(idConocimiento, idUsuario) values(2,2)
+
+use proyecto_ipc2
+
+update usuario set contraseña = AES_ENCRYPT('asdf','llave') where idUsuario = 5
 
 
+select idConocimiento from conocimiento where nombre = 'con1'
+
+insert into conocimientoadquirido(idConocimiento, idUsuario, dominio, formaAprendido, comentario)
+values()
 
 
+alter table conocimientoadquirido modify formaAprendido varchar(200)
 
+alter table conocimientoadquirido modify comentario varchar(500)
 
+select * from contactos
 
+select * from usuario
 
-
-
+insert into contactos (usuarioUno, usuarioDos) values (2,5)
